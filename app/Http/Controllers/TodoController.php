@@ -28,7 +28,7 @@ class TodoController extends Controller
                  ->setMusic($request->input('music'))
                  ->save();
 
-        return back()->with('success', 'Todo deleted successfully');
+        return back()->with('success', 'Todo created successfully');
     }
 
     public function deleteTodo($id) {
