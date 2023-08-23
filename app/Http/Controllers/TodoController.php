@@ -36,4 +36,12 @@ class TodoController extends Controller
 
         return back()->with('success', 'Todo deleted successfully');
     }
+
+    public function checkedTodo($id, Request $request) {
+        $checked = Task::where('id', $id)->update([
+            'is_checked' => filter_var($request->checked ?? false, FILTER_VALIDATE_BOOLEAN)
+        ]);
+
+        return back()->with('success', 'Todo checked successfully');
+    }
 }

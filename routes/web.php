@@ -15,4 +15,5 @@ use App\Http\Controllers\TodoController;
 
 Route::get('/', [TodoController::class, 'index']);
 Route::post('/todo', [TodoController::class, 'createTodo'])->name('create');
+Route::post('/todo/checked/{id}', [TodoController::class, 'checkedTodo'])->name('checked');
 Route::get('/delete/{id}', [TodoController::class, 'deleteTodo'])->name('delete');

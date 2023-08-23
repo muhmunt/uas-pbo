@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('bg')->nullable();
             $table->string('music')->nullable();
             $table->text('description')->nullable();
+            $table->boolean('is_checked')->default(false);
             $table->timestamps();
         });
     }
