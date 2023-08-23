@@ -13,7 +13,6 @@ use App\Http\Controllers\TodoController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/todo', [TodoController::class, 'createTodo']);
+Route::get('/', [TodoController::class, 'index']);
+Route::post('/todo', [TodoController::class, 'createTodo'])->name('create');
+Route::get('/delete/{id}', [TodoController::class, 'deleteTodo'])->name('delete');
